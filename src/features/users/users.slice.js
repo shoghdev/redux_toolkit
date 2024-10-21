@@ -25,8 +25,11 @@ export const UserSlice = createSlice({
                 person.salary -= 50000
             }
         },
+        deleteUser: function(state,action) {
+            state.items = state.items.filter(user=>user.id !== action.payload)
+        },
     }
 })
 
 export const reducer = UserSlice.reducer
-export const {salaryUp, salaryDown} = UserSlice.actions
+export const {salaryUp, salaryDown,deleteUser} = UserSlice.actions
