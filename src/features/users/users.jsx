@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux"
-import { salaryUp, salaryDown ,deleteUser} from "./users.slice"
+import { salaryUp, salaryDown, deleteUser, swipeUp, swipeDown} from "./users.slice"
 
 export const Users = ()=> {
     const users = useSelector(state=>state.items)
@@ -28,6 +28,8 @@ export const Users = ()=> {
                                 <button onClick={()=>dispatch(salaryUp(user.id))}>salary up</button>
                                 <button onClick={()=>dispatch(salaryDown(user.id))}>salary down</button>
                                 <button onClick={()=>dispatch(deleteUser(user.id))}>x</button>
+                                <button onClick={()=>dispatch(swipeUp(user.id))}>swipe up</button>
+                                <button onClick={()=>dispatch(swipeDown(user.id))}>swipe down</button>
                             </td>
                         </tr>
                     )

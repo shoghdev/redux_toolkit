@@ -28,8 +28,26 @@ export const UserSlice = createSlice({
         deleteUser: function(state,action) {
             state.items = state.items.filter(user=>user.id !== action.payload)
         },
+
+        swipeUp: function(state,action) {
+            const person = state.items.find(user=>user.id == action.payload)
+            let currentIndex = state.items.indexOf(person)
+            let prevIndex = currentIndex - 1
+            if(person) {
+                [state.items[currentIndex], state.items[prevIndex]] = [state.items[prevIndex], state.items[currentIndex]]
+            }
+        },
+
+         swipeDown: function(state,action) {
+            const person = state.items.find(user=>user.id == action.payload)
+            let currentIndex = state.items.indexOf(person)
+            let prevIndex = currentIndex + 1
+            if(person) {
+                [state.items[currentIndex], state.items[prevIndex]] = [state.items[prevIndex], state.items[currentIndex]]
+            }
+        },
     }
 })
 
 export const reducer = UserSlice.reducer
-export const {salaryUp, salaryDown,deleteUser} = UserSlice.actions
+export const {salaryUp, salaryDown, deleteUser, swipeUp, swipeDown} = UserSlice.actions
