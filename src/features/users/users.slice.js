@@ -18,9 +18,15 @@ export const UserSlice = createSlice({
             if(person) {
                 person.salary += 50000
             }
-        }
+        },
+        salaryDown: function(state,action) {
+            const person = state.items.find(user=>user.id == action.payload)
+            if(person && person.salary > 0) {
+                person.salary -= 50000
+            }
+        },
     }
 })
 
 export const reducer = UserSlice.reducer
-export const {salaryUp} = UserSlice.actions
+export const {salaryUp, salaryDown} = UserSlice.actions
