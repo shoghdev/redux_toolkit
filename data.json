@@ -1,0 +1,8 @@
+{
+    "users": [
+        {"id":101, "name": "John", "salaray": 150000},
+        {"id":102, "name": "Jim", "salaray": 250000},
+        {"id":103, "name": "Ani", "salaray": 350000},
+        {"id":104, "name": "Anna", "salaray": 450000}
+    ]
+}
