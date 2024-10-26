@@ -12,16 +12,17 @@ export const BookItem = () => {
         dispatch(getBook(id))
     },[id])
     return <>
-        <h3>Book Item</h3>
-        {
-            current && <div>
-                <img 
-                    src={current.photo} 
-                    style={{height:300}}
-                />
-                <p>{current.title}</p>
-                <strong>by {current.author}</strong>
-            </div>
-        }
+        <div style={{display:"flex", gap:"20px"}}>
+            {
+                    current && <div>
+                        <img 
+                            src={current.photo} 
+                            style={{height:300}}
+                        />
+                        <p>{current.title}</p>
+                        <strong>by {current.author}</strong>
+                    </div>
+                }
+        </div>
     </>
 }

@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"
-import { getComments } from "./comments.api"
+import { addComment, getComments } from "./comments.api"
 const initialState = {
     items:[]
 }
@@ -11,6 +11,9 @@ const CommentsSlice = createSlice({
         builder
         .addCase(getComments.fulfilled, (state, action) => {
             state.items = action.payload
+        })
+        .addCase(addComment.fulfilled,(state,action)=>{
+            state.items.push(action.payload)
         })
     }
 })

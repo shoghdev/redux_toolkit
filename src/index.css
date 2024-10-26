@@ -66,3 +66,41 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+nav {
+  width: 1280px;
+  background-color: #213547;
+  height: 50px;
+  display: flex;
+  gap: 20px;
+  padding: 20px;
+  color: white;
+}
+
+nav li {
+  list-style-type: none;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+form input{
+  margin-bottom: 20px;
+  padding: 10px;
+}
+
+.books-list {
+  display: flex;
+  gap: 20px;
+  margin-top: 50px;
+  flex-wrap: wrap;
+}

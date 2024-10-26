@@ -11,18 +11,20 @@ export const Books = () => {
     },[])
     return <>
         <h3>Books {books.length}</h3>
-        {
-            books.map(book => 
-                <div key={book.id}>
-                    <img 
-                        src={book.photo} 
-                        style={{width:150, height:200}}
-                        alt="" 
-                    />
-                    <p>{book.title}</p>
-                    <Link to={"/book/"+book.id}>comments</Link>
-                </div>
-            )
-        }
+        <div className="books-list">
+            {
+                books.map(book => 
+                    <div key={book.id}>
+                        <img 
+                            src={book.photo} 
+                            style={{width:150, height:200}}
+                            alt="" 
+                        />
+                        <p>{book.title}</p>
+                        <Link to={"/book/"+book.id}>comments</Link>
+                    </div>
+                )
+            }
+        </div>
     </>
 }

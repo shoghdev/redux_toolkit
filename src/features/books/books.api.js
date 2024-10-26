@@ -10,3 +10,8 @@ export const getBook =  createAsyncThunk("book/get", async(id)=>{
     const resposne = await axios.get("http://localhost:3004/books/"+id)
     return resposne.data
 })
+
+export const addBook = createAsyncThunk("book/post", async(data)=>{
+    const resposne = await axios.post("http://localhost:3004/books/", data)
+    return resposne.data
+})

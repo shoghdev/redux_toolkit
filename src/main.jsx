@@ -7,15 +7,27 @@ import { Books } from './features/books/books.jsx'
 import { Comments } from './features/comments/comments.jsx'
 import { Provider } from 'react-redux'
 import { store } from './store.js'
+import { AddBook } from './features/books/addbook.jsx'
+import { Layouts } from './features/Layouts.jsx'
 
 const router = createBrowserRouter([
   {
-    path: '',
-    element: <Books />
-  },
-  {
-    path: '/book/:id',
-    element: <Comments />
+    path:"",
+    element:<Layouts />,
+    children:[
+      {
+        path: '',
+        element: <Books />
+      },
+      {
+        path: '/book/:id',
+        element: <Comments />
+      },
+      {
+        path:'/book/add',
+        element: <AddBook />
+      }
+    ]
   }
 ])
 createRoot(document.getElementById('root')).render(

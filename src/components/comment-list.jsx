@@ -1,12 +1,18 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { useParams } from "react-router-dom"
 import { getComments } from "../features/comments/comments.api"
+import { AddComment } from "../features/comments/addcomment"
 
 export const CommentList = () => {
     const dispatch = useDispatch()
     const comments = useSelector(state => state.comment.items)
     const {id} = useParams()
+    const [isModalOpen, setIsModalOpen] = useState(false)
+    
+    const handleModalOpen = () => setIsModalOpen(true)
+
+    const handleModalClose = () => setIsModalOpen(false)
 
     useEffect(()=>{
         dispatch(getComments(id))
@@ -25,5 +31,9 @@ export const CommentList = () => {
                 </div>
             })
         }
+        <button onClick={handleModalOpen}>Add new comment</button>
+        {isModalOpen && (
+            <AddComment onClose={handleModalClose} onOpen={isModalOpen} id={id}/>
+        )}
     </>
 }
