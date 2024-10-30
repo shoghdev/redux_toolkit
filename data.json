@@ -1,0 +1,40 @@
+{
+  "users": [
+    {
+      "id": "101",
+      "name": "John",
+      "age": 40,
+      "salary": 150000
+    },
+    {
+      "id": "104",
+      "name": "Emily",
+      "age": 30,
+      "salary": 110000
+    },
+    {
+      "id": "105",
+      "name": "Michael",
+      "age": 45,
+      "salary": 160000
+    },
+    {
+      "id": "107",
+      "name": "David",
+      "age": 38,
+      "salary": 140000
+    },
+    {
+      "id": "108",
+      "name": "Laura",
+      "age": 29,
+      "salary": 100000
+    },
+    {
+      "id": "110",
+      "name": "Olivia",
+      "age": 27,
+      "salary": 90000
+    }
+  ]
+}
