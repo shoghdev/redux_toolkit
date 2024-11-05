@@ -1,0 +1,39 @@
+{
+  "medicines": [
+    {
+      "id": "101",
+      "name": "Analgin",
+      "price": 50
+    },
+    {
+      "id": "102",
+      "name": "Nurofen",
+      "price": 1000
+    },
+    {
+      "id": "b790",
+      "name": "test",
+      "price": "100"
+    },
+    {
+      "id": "9304",
+      "name": "test",
+      "price": "100"
+    },
+    {
+      "id": "d8b1",
+      "name": "test",
+      "price": "100"
+    },
+    {
+      "id": "adbc",
+      "name": "fddfds",
+      "price": "700"
+    },
+    {
+      "id": "73ce",
+      "name": "new",
+      "price": "500"
+    }
+  ]
+}
