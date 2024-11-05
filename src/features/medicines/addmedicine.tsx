@@ -1,32 +1,36 @@
-import { useForm } from "react-hook-form"
+import { SubmitHandler, useForm } from "react-hook-form"
 import { useAppDispatch } from "../../app/hooks"
 import { InputMedicine } from "./type"
 import { addNewMedicine } from "./medicine.slice"
 
-export const AddMedicine = ({ onOpen, onClose }) => {
-    const { register, handleSubmit } = useForm()
+interface Props {
+    onOpen: () => void;
+    onClose: () => void;
+}
+
+export const AddMedicine: React.FC<Props> = ({ onOpen, onClose }) => {
+    const { register, handleSubmit } = useForm<InputMedicine>()
     const dispatch = useAppDispatch()
-    const onSubmit = (data:InputMedicine) => {
+
+    const onSubmit: SubmitHandler<InputMedicine> = (data) => {
         dispatch(addNewMedicine(data))
-        onClose(true)
+        onClose()
     }
 
     return <>
         <div
-            onOpen={onOpen}
-            onClose={onClose}
             className="
             gap-5 border-2 border-gray-500 rounded-lg p-10
             absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2
             w-[800px] h-[700px] bg-gray-200 shadow-gray-300"
         >
             <div>
-                <button 
+                <button
                     onClick={onClose}
                     className="border-2 rounded-lg border-gray-500 
                                py-1 px-2 hover:bg-gray-100 text-rose-700"
                 >x</button>
-                <form 
+                <form
                     onSubmit={handleSubmit(onSubmit)}
                     className="flex flex-col justify-center items-center h-full">
                     <input

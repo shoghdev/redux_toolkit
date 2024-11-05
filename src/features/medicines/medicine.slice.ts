@@ -45,7 +45,7 @@ export const medicineSlice = createAppSlice({
                 return response.data
             },
             {
-                fulfilled: (state, action: PayloadAction<InputMedicine>) => {
+                fulfilled: (state, action: PayloadAction<IMedecine>) => {
                     console.log(action.payload)
                     state.list.push(action.payload)
                 }
@@ -54,7 +54,7 @@ export const medicineSlice = createAppSlice({
     }),
     selectors: {
         medicines: state => state.list,
-        total: state => state.list.reduce((a,b) => a + b.price, 0),
+        total: state => state.list.reduce((a,b) => a + +b.price, 0),
         currentFilter: state => state.currentFilter,
         filterMedicine: state => {
             if(state.currentFilter === "")
